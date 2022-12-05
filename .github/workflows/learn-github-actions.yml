@@ -1,13 +1,19 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Copy the files
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  Active-MQ:
+    runs-on: ubuntu-20.04
+    name: validation
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          run: |
+            run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: Deploy with 
+        run:  root@scrbsmqdk007497:/tmp
