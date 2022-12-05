@@ -17,6 +17,6 @@ jobs:
         - name: validation
           id: files
           run: |
-            mkdir -p /tmp/test
+            mkdir -p /tmp/tests
             SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
             ssh -i $SSH_PRIVATE_KEY root@scrbsmqdk007497
