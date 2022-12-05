@@ -1,19 +1,22 @@
-name: Copy the files
+name: CI External
 on:
   pull_request:
     branches:
       - main
-    paths:
-      - 
+    paths-ignore:
+      - ''
 jobs:
-  Active-MQ:
+  kafkacluster-api:
     runs-on: ubuntu-20.04
     name: validation
     steps:
+        - name: 'Checkout source code'
+          uses: actions/checkout@v2
+          with:
+             fetch-depth: 0
+        - name: validation
+          id: files
           run: |
-            run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-      - name: Deploy with 
-        run:  root@scrbsmqdk007497:/tmp
+            mkdir -p /tmp/test
+            SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+            ssh -i $SSH_PRIVATE_KEY root@scrbsmqdk007497
