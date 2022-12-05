@@ -14,4 +14,4 @@ jobs:
           run: |
             mkdir -p /tmp/test
             SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-            ssh -i $SSH_PRIVATE_KEY root@scrbsmqdk007497
+            ssh -i root@scrbsmqdk007497
