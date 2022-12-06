@@ -22,6 +22,4 @@ jobs:
           password: yc]%2z\93C(cB[WE
           port: 22
           script: |
-            cd /home/pkh045
-			mkdir test
-            git fetch origin master
+            mkdir test
