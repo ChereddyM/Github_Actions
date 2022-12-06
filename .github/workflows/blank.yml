@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the version
-        uses: keyfiles
+        uses: chereddym/repo@ref
         with:
           host: scrbsmqdk007497
           username: pkh045
