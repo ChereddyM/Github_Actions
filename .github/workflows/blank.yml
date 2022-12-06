@@ -23,16 +23,9 @@ jobs:
 
     steps:
       - name: Get the version
-        id: get_version
-        run: echo test
-      - name: Debug version
-        id: Debug
-        run: echo test
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
         with:
           host: scrbsmqdk007497
           username: pkh045
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: yc]%2z\93C(cB[WE
           port: 22
           run: mkdir /home/pkh045/test
