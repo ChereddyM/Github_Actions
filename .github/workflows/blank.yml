@@ -21,15 +21,21 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: mkdir -p /tmp/test
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          sshpass -p “yc]%2z\93C(cB[WE” ssh mrc074@Scrbsmqdk007497
+      - name: Get the version
+        id: get_version
+        run: echo test
+      - name: Debug version
+        id: Debug
+        run: echo test
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: scrbsmqdk007497
+          username: pkh045
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          run: mkdir /home/pkh045/test
