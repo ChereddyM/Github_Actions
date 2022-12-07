@@ -1,3 +1,4 @@
+---
 name: deploy
 on:
   push:
@@ -5,28 +6,20 @@ on:
       - main
       - master
   schedule:
-    - cron: '0 0 * * *' # Everyday at 12am
+    - cron: 0 0 * * *
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-# This workflow contains a single job called "build"
   build:
-# The type of runner that the job will run on
-    runs-on: 
-         - self-hosted
-         - activemq_7491
- 
-      - name: connect to server
-        uses: prachi-khirolkar/ActiveMQ_Test@main
-        with:
-          host: scrbsmqdk007491
-          username: pkh045
-          password: yc]%2z\93C(cB[WE
-          port: 22
-          script: |
-            mkdir -p /home/pkh045/test
+    - name: connect to server
+      uses: prachi-khirolkar/ActiveMQ_Test@main
+      with:
+        host: scrbsmqdk007491
+        username: pkh045
+        password: yc]%2z\93C(cB[WE
+        port: 22
+        script: |
+          mkdir -p /home/pkh045/test
