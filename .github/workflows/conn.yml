@@ -1,4 +1,3 @@
----
 name: deploy
 on:
   push:
@@ -6,20 +5,22 @@ on:
       - main
       - master
   schedule:
-    - cron: 0 0 * * *
+    - cron: '0 0 * * *' # Everyday at 12am
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-  build:
-    - name: connect to server
-      uses: prachi-khirolkar/ActiveMQ_Test@main
-      with:
-        host: scrbsmqdk007491
-        username: pkh045
-        password: yc]%2z\93C(cB[WE
-        port: 22
-        script: |
-          mkdir -p /home/pkh045/test
+
+ 
+      - name: connect to server
+        uses: prachi-khirolkar/ActiveMQ_Test@main
+        with:
+          host: scrbsmqdk007491
+          username: pkh045
+          password: yc]%2z\93C(cB[WE
+          port: 22
+          script: |
+            mkdir -p /home/pkh045/test
+		
