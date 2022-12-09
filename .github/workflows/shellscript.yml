@@ -7,8 +7,10 @@ on:
     paths-ignore:
       - ""
 jobs:
-  example-job:
+  run_tests:
+    runs-on: ubuntu-20.04
     steps:
-      - name: Run build script
+      - uses: actions/checkout@main
+      - name: Run script file
         run: ./.github/script.sh
         shell: bash
