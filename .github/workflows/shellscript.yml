@@ -1,0 +1,17 @@
+---
+name: CI_SSH
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ""
+jobs:
+  run_tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run script file
+        run: |
+    # make file runnable, might not be necessary
+    chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
