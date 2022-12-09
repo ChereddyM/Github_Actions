@@ -8,7 +8,11 @@ on:
       - ""
 jobs:
   run_tests:
-    runs-on: self-hosted
+    build: null
+    runs-on:
+    - self-hosted
+    - activemq_7491
+    - ubuntu-latest
     steps:
       - uses: actions/checkout@main
       - name: Run script file
