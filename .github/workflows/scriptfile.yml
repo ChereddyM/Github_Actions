@@ -33,5 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           cd /home/pkh045/scripts
-          ./artemis_restart.sh newbroker start
+          ./artemis_restart.sh newbroker start &
           echo folder is created.
