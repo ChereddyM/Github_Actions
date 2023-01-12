@@ -34,6 +34,5 @@ jobs:
         run: |
           cd /home/pkh045/scripts
           sh create.sh Broker_new_git
-          sleep 30
-          /var/tmp/Broker_new_git/bin/artemis-service start
+          sleep 0
           echo started sersvices.
