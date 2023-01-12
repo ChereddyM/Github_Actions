@@ -33,4 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           /home/pkh045/scripts/create.sh Broker_new_git
-          echo folder is created.
+          /home/pkh045/scripts/artemis_restart.sh Broker_new_git start
+          echo started services.
